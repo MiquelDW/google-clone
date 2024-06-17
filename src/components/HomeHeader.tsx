@@ -4,7 +4,7 @@ import { TbGridDots } from "react-icons/tb";
 export default function HomeHeader() {
   return (
     // Header Section for the Home page
-    <header className="flex justify-end p-5 text-sm">
+    <header className="flex justify-end p-5 text-sm" aria-label="Primary site header">
       <div className="flex items-center space-x-4">
         {/* Gmail + Images Links */}
         <Link href="https://mail.google.com" className="hover:underline">

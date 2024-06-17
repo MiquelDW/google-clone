@@ -11,8 +11,8 @@ export const metadata: Metadata = {
     "An open source Google clone built with Next.js and Tailwind CSS.",
 };
 
-// Root Layout Component wraps around all route files inside the application
-// it ensures a consistent layout for all routes within the application
+// Root Layout Component wraps around all files inside the application
+// it ensures a consistent layout for all pages and routes within the application
 export default function RootLayout({
   children,
 }: Readonly<{

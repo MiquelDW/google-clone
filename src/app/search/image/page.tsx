@@ -7,5 +7,5 @@ type ImageSearchPageProps = {
 export default function ImageSearchPage({
   searchParams,
 }: ImageSearchPageProps) {
-  return <div></div>;
+  return <div className="">ImageSearchPage</div>;
 }
