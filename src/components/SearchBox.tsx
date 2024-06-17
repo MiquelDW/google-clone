@@ -17,7 +17,7 @@ export default function SearchBox() {
   // in non-page components, (dynamic) query parameters are not passed as a prop
   // use the 'useSearchParams' hook to access the dynamic query parameters from the current URL
   const searchParams = useSearchParams();
-  // retrieve value of the dynamic query parameter "searchterm"
+  // retrieve current value of the dynamic query parameter "searchterm"
   const searchTerm = searchParams.get("searchTerm");
 
   // state variable that keeps track of the current value of the query parameter "searchterm"
