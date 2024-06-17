@@ -1,5 +1,6 @@
 import SearchHeader from "@/components/SearchHeader";
-import "./../globals.css";
+// importing globals.css inside another layout component will break the application's styling when you refresh homepage, it's not necessary
+// import "./../globals.css";
 
 // Layout Component that wraps around all files inside folder 'search'
 // it ensures a consistent layout for all pages and routes within the folder 'search'

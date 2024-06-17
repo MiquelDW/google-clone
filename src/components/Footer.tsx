@@ -1,6 +1,5 @@
-// use 'lookup' API to "look up" where the current user is from
-
 import Link from "next/link";
+// use 'lookup' API to "look up" where the current user is from
 import CountryLookup from "./CountryLookup";
 
 export default function Footer() {

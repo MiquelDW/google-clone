@@ -1,6 +1,6 @@
 // predefine object structure for given 'props' object
 type WebSearchPageProps = {
-  // contains dynamic query parameters from the current URL
+  // 'searchParams' prop contains dynamic query parameters from the current URL
   searchParams: { searchTerm: string };
 };
 

@@ -1,4 +1,5 @@
 // indicate that this file or module should be treated as a Client Component
+// in Next.js, you should use client components for interactivity and dynamic content on a website because they enable browser-side rendering and event handling, providing a responsive and interactive user experience
 "use client";
 
 import { useRouter } from "next/navigation";
@@ -74,7 +75,7 @@ export default function HomeSearch() {
           className="flex-grow focus:outline-none"
           // this <input> element is now controlled by state var 'input'
           value={input}
-          // update state variable 'input'
+          // update state variable 'input' with onChange event listener
           onChange={(e) => setInput(e.target.value)}
         />
         <BsFillMicFill className="text-lg" />

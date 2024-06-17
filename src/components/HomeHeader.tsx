@@ -1,10 +1,14 @@
+// navigate users to the specified routes without a full page reload
 import Link from "next/link";
 import { TbGridDots } from "react-icons/tb";
 
 export default function HomeHeader() {
   return (
     // Header Section for the Home page
-    <header className="flex justify-end p-5 text-sm" aria-label="Primary site header">
+    <header
+      className="flex justify-end p-5 text-sm"
+      aria-label="Primary site header"
+    >
       <div className="flex items-center space-x-4">
         {/* Gmail + Images Links */}
         <Link href="https://mail.google.com" className="hover:underline">
