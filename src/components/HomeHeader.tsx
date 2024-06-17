@@ -3,7 +3,7 @@ import { TbGridDots } from "react-icons/tb";
 
 export default function HomeHeader() {
   return (
-    // Header section for the Home page
+    // Header Section for the Home page
     <header className="flex justify-end p-5 text-sm">
       <div className="flex items-center space-x-4">
         {/* Gmail + Images Links */}

@@ -1,7 +1,3 @@
-// indicate that this file or module should be treated as a Client Component
-// in Next.js, you should use client components for interactivity and dynamic content on a website because they enable browser-side rendering and event handling, providing a responsive and interactive user experience
-"use client";
-
 import HomeHeader from "@/components/HomeHeader";
 import HomeSearch from "@/components/HomeSearch";
 import Image from "next/image";
