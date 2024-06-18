@@ -5,6 +5,7 @@ import CountryLookup from "./CountryLookup";
 export default function Footer() {
   return (
     // Footer Section for the whole website
+    // footer is positioned absolutely relative to the <body>
     <footer className="absolute bottom-0 w-full bg-[#f2f2f2] text-sm text-gray-500">
       {/* Country Section */}
       <div className="border-b px-8 py-3">

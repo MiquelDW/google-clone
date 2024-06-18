@@ -1,15 +1,16 @@
 import WebSearchResults from "@/components/WebSearchResults";
 import Link from "next/link";
-import { useRouter } from "next/router";
+import { ImageSearchResultItem } from "../image/page";
 
 // predefine object structure for given 'props' object
 export type SearchPageProps = {
   // 'searchParams' prop contains dynamic query parameters from the current URL
+  // Server Component re-renders if the values of dynamic query parameters change
   searchParams: { searchTerm: string; start: string };
 };
 
 // predefine object structure for each Search Result object
-export type SearchResultItem = {
+export type WebSearchResultItem = {
   kind: string;
   title: string;
   htmlTitle: string;
@@ -36,12 +37,15 @@ export type SearchResult = {
     totalResults: string;
     formattedTotalResults: string;
   };
-  items: SearchResultItem[];
+  items: WebSearchResultItem[] | ImageSearchResultItem[];
 };
 
 export default async function WebSearchPage({ searchParams }: SearchPageProps) {
-  //
-  const startIndex = "1";
+  // add delay of 5 seconds
+  // await new Promise((resolve) => setTimeout(resolve, 5000));
+
+  // retrieve current value of the dynamic query parameter "start"
+  const startIndex = searchParams.start || "1";
   // retrieve current value of the dynamic query parameter "searchTerm"
   const searchTerm = searchParams.searchTerm;
 

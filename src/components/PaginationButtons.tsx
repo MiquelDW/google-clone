@@ -16,13 +16,13 @@ export default function PaginationButtons() {
   // retrieve current value of the dynamic query parameter "searchterm"
   const searchTerm = searchParams.get("searchTerm");
 
-  //
-  const startIndex = +!searchParams.get("start") || 1;
+  // retrieve the current value of the dynamic query parameter "start"
+  const startIndex = Number(searchParams.get("start")) || 1;
 
   return (
     // Pagination wrapper
     <div className="flex justify-between px-10 pb-4 text-blue-700 sm:justify-start sm:space-x-44 sm:px-0">
-      {/* Previous <Link> component */}
+      {/* "Previous" <Link> component */}
       {startIndex >= 10 && (
         <Link
           href={`${pathname}?searchTerm=${searchTerm}&start=${startIndex - 10}`}
@@ -34,7 +34,7 @@ export default function PaginationButtons() {
         </Link>
       )}
 
-      {/* Next <Link> component */}
+      {/* "Next" <Link> component */}
       {startIndex <= 90 && (
         <Link
           href={`${pathname}?searchTerm=${searchTerm}&start=${startIndex + 10}`}
