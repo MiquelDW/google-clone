@@ -67,7 +67,9 @@ export default async function ImageSearchPage({
   if (!imageSearchResults.items) {
     return (
       <div className="flex flex-col items-center justify-center pt-10">
-        <h1 className="mb-4 text-3xl">No results found for "{searchTerm}"</h1>
+        <h1 className="mb-4 text-3xl">
+          No results found for &quot;{searchTerm}&quot;
+        </h1>
         <p className="text-lg">
           Try searching the web or images for something else{" "}
           <Link href="/" className="text-blue-500">
