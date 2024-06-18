@@ -1,6 +1,6 @@
 // indicate that this file or module should be treated as a Client Component
 // in Next.js, you should use client components for interactivity and dynamic content on a website because they enable browser-side rendering and event handling, providing a responsive and interactive user experience
-"use client";
+"use client"; 
 
 import { usePathname, useRouter, useSearchParams } from "next/navigation";
 import { AiOutlineCamera, AiOutlineSearch } from "react-icons/ai";

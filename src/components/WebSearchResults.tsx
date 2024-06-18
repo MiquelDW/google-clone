@@ -3,6 +3,8 @@ import Link from "next/link";
 import Parser from "html-react-parser";
 import { ImageSearchResultItem } from "@/app/search/image/page";
 import PaginationButtons from "./PaginationButtons";
+import { Suspense } from "react";
+import Loading from "@/app/search/web/loading";
 
 // predefine object structure for given 'props' object
 type SearchResultsProps = {
@@ -61,7 +63,9 @@ export default function WebSearchResults({
       })}
 
       {/* pagination buttons (this is a Client Component) */}
-      <PaginationButtons />
+      <Suspense fallback={<div>Loading...</div>}>
+        <PaginationButtons />
+      </Suspense>
     </div>
   );
 }

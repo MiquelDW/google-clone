@@ -5,6 +5,8 @@ import { RiSettings3Line } from "react-icons/ri";
 import { TbGridDots } from "react-icons/tb";
 import SearchBox from "./SearchBox";
 import SearchHeaderOptions from "./SearchHeaderOptions";
+import { Suspense } from "react";
+import { Divide } from "lucide-react";
 
 export default function SearchHeader() {
   console.log("SearchHeader rendered");
@@ -35,7 +37,10 @@ export default function SearchHeader() {
         {/* Google Search Section */}
         <div className="flex-1">
           {/* this is a Client Side component */}
-          <SearchBox />
+          {/* Server components will often need to wait for the query parameters to resolve and then fetch the relevant data. Wrapping the client components in Suspense ensures that they do not attempt to render until the necessary data (query parameters in this case) is available */}
+          <Suspense fallback={<div>Loading...</div>}>
+            <SearchBox />
+          </Suspense>
         </div>
 
         {/* Settings and Menu Section */}
@@ -51,7 +56,9 @@ export default function SearchHeader() {
       </div>
 
       {/* Bottom Header Section */}
-      <SearchHeaderOptions />
+      <Suspense fallback={<div>Loading...</div>}>
+        <SearchHeaderOptions />
+      </Suspense>
     </header>
   );
 }

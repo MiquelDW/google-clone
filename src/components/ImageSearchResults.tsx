@@ -2,6 +2,8 @@ import Link from "next/link";
 import PaginationButtons from "./PaginationButtons";
 import { SearchResult, WebSearchResultItem } from "@/app/search/web/page";
 import { ImageSearchResultItem } from "@/app/search/image/page";
+import { Suspense } from "react";
+import Loading from "@/app/search/image/loading";
 
 // predefine object structure for given 'props' object
 type SearchResultsProps = {
@@ -61,7 +63,9 @@ export default function ImageSearchResults({
 
       {/* pagination buttons (this is a Client Component) */}
       <div className="ml-16">
-        <PaginationButtons />
+        <Suspense fallback={<div>Loading...</div>}>
+          <PaginationButtons />
+        </Suspense>
       </div>
     </div>
   );

@@ -1,8 +1,6 @@
 import ImageSearchResults from "@/components/ImageSearchResults";
 import { SearchPageProps } from "../web/page";
 import Link from "next/link";
-import Loading from "./loading";
-import { Suspense } from "react";
 
 export type ImageSearchResultItem = {
   kind: string;
@@ -85,9 +83,7 @@ export default async function ImageSearchPage({
   return (
     <div>
       {imageSearchResults && (
-        <Suspense fallback={<Loading />}>
-          <ImageSearchResults imageSearchResults={imageSearchResults} />
-        </Suspense>
+        <ImageSearchResults imageSearchResults={imageSearchResults} />
       )}
     </div>
   );

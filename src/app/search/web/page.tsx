@@ -1,8 +1,6 @@
 import WebSearchResults from "@/components/WebSearchResults";
 import Link from "next/link";
 import { ImageSearchResultItem } from "../image/page";
-import { Suspense } from "react";
-import Loading from "./loading";
 
 // predefine object structure for given 'props' object
 export type SearchPageProps = {
@@ -106,9 +104,7 @@ export default async function WebSearchPage({ searchParams }: SearchPageProps) {
   return (
     <div>
       {webSearchResults && (
-        <Suspense fallback={<Loading />}>
-          <WebSearchResults webSearchResults={webSearchResults} />
-        </Suspense>
+        <WebSearchResults webSearchResults={webSearchResults} />
       )}
     </div>
   );
