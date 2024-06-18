@@ -6,7 +6,6 @@ import { TbGridDots } from "react-icons/tb";
 import SearchBox from "./SearchBox";
 import SearchHeaderOptions from "./SearchHeaderOptions";
 import { Suspense } from "react";
-import { Divide } from "lucide-react";
 
 export default function SearchHeader() {
   console.log("SearchHeader rendered");
