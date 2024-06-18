@@ -42,7 +42,7 @@ export default function ImageSearchResults({
         ))}
       </div>
 
-      {/*  */}
+      {/* (this is a Client Component) */}
       <div className="ml-16">
         <PaginationButtons />
       </div>

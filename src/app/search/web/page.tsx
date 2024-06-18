@@ -1,4 +1,6 @@
 import WebSearchResults from "@/components/WebSearchResults";
+import Link from "next/link";
+import { useRouter } from "next/router";
 
 // predefine object structure for given 'props' object
 export type SearchPageProps = {
@@ -41,8 +43,7 @@ export default async function WebSearchPage({ searchParams }: SearchPageProps) {
   //
   const startIndex = "1";
   // retrieve current value of the dynamic query parameter "searchTerm"
-  const val = searchParams.searchTerm;
-  console.log(val);
+  const searchTerm = searchParams.searchTerm;
 
   // GET request handler function
   // with Server Components you get request memorization, caching and revalidation features out of the box
@@ -50,7 +51,7 @@ export default async function WebSearchPage({ searchParams }: SearchPageProps) {
     try {
       // create a GET HTTP request to the speficified URL using the Fetch API
       const res = await fetch(
-        `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchParams.searchTerm}'}&start=${startIndex}`,
+        `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchTerm}'}&start=${startIndex}`,
       );
 
       // handles HTTP errors that the Fetch API itself does not treat as errors
@@ -69,12 +70,30 @@ export default async function WebSearchPage({ searchParams }: SearchPageProps) {
       } else {
         console.log("An unknown error occured");
       }
+
+      // re-throw error to trigger higher-level error handling mechanism 'error.tsx'
+      throw err;
     }
   };
 
   // fetch the Google search results based on the value of the dynamic query parameter "searchTerm"
   const webSearchResults = await fetchResults();
   console.log(webSearchResults);
+
+  // display this if no data has been fetched
+  if (!webSearchResults.items) {
+    return (
+      <div className="flex flex-col items-center justify-center pt-10">
+        <h1 className="mb-4 text-3xl">No results found for "{searchTerm}"</h1>
+        <p className="text-lg">
+          Try searching the web or images for something else{" "}
+          <Link href="/" className="text-blue-500">
+            Home
+          </Link>
+        </p>
+      </div>
+    );
+  }
 
   return (
     <div>
