@@ -29,7 +29,7 @@ export default function SearchHeader() {
             // image starts loading as soon as possible, improving the initial rendering speed (for essential images)
             priority
             // maintain aspect ratio with the given 'width' and 'height' props
-            className="w-auto"
+            className="hidden w-auto sm:flex"
           />
         </Link>
 
@@ -49,7 +49,7 @@ export default function SearchHeader() {
         </div>
 
         {/* Sign in Button */}
-        <button className="ml-2 rounded-md bg-blue-500 px-6 py-2 font-medium text-white transition-all hover:shadow-md hover:brightness-105">
+        <button className="w-22 ml-2 rounded-md bg-blue-500 px-6 py-2 text-sm font-medium text-white transition-all hover:shadow-md hover:brightness-105">
           Sign in
         </button>
       </div>

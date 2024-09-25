@@ -38,7 +38,10 @@ export default function WebSearchResults({
       {webSearchResults.items.map((webSearchResult) => {
         if (isWebSearchResultItem(webSearchResult)) {
           return (
-            <div className="mb-8 max-w-xl" key={webSearchResult.link}>
+            <div
+              className="mb-10 max-w-xl overflow-hidden"
+              key={webSearchResult.link}
+            >
               {/* links that navigate user to the specified route (other website) */}
               <div className="group flex flex-col">
                 <Link href={webSearchResult.link}>

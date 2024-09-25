@@ -32,7 +32,7 @@ export default async function ImageSearchPage({
   // with Server Components you get request memorization, caching and revalidation features out of the box
   const fetchResults = async () => {
     try {
-      // create a GET HTTP request to the speficified URL using the Fetch API
+      // create a GET HTTP request to the specified URL using the Fetch API
       const res = await fetch(
         `https://www.googleapis.com/customsearch/v1?key=${process.env.API_KEY}&cx=${process.env.CONTEXT_KEY}&q=${searchTerm}'}&searchType=image&start=${startIndex}`,
       );

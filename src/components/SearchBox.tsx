@@ -49,12 +49,12 @@ export default function SearchBox() {
         className="w-full focus:outline-none"
       />
       <RxCross2
-        className="cursor-pointer text-2xl text-gray-500 sm:mr-2"
+        className="cursor-pointer text-2xl text-gray-500 md:mr-2"
         onClick={() => setTerm("")}
       />
-      <BsFillMicFill className="mr-3 hidden cursor-pointer border-l-2 border-gray-300 pl-4 text-4xl text-blue-500 sm:inline-flex" />
+      <BsFillMicFill className="mr-3 hidden cursor-pointer border-l-2 border-gray-300 pl-4 text-4xl text-blue-500 md:inline-flex" />
       <AiOutlineSearch
-        className="hidden cursor-pointer text-2xl text-blue-500 sm:inline-flex"
+        className="hidden cursor-pointer text-2xl text-blue-500 md:inline-flex"
         onClick={handleSubmit}
       />
     </form>

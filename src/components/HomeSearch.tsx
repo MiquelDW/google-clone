@@ -2,6 +2,7 @@
 // in Next.js, you should use client components for interactivity and dynamic content on a website because they enable browser-side rendering and event handling, providing a responsive and interactive user experience
 "use client";
 
+import Link from "next/link";
 import { useRouter } from "next/navigation";
 import { FormEvent, MouseEvent, useState } from "react";
 import { AiOutlineSearch } from "react-icons/ai";
@@ -89,14 +90,12 @@ export default function HomeSearch() {
         >
           Google Search
         </button>
-        <button
-          // disable button when state var 'randomSearchLoading' is true
-          disabled={randomSearchLoading}
-          onClick={randomSearch}
-          className="h-10 w-36 rounded-md bg-[#f8f9fa] text-sm text-gray-800 ring-1 ring-transparent transition-shadow hover:shadow-md hover:ring-gray-200 focus:outline-none active:ring-gray-300 disabled:opacity-80 disabled:shadow-sm"
+        <Link
+          href="https://doodles.google/"
+          className="flex h-10 w-36 items-center justify-center rounded-md bg-[#f8f9fa] text-sm text-gray-800 ring-1 ring-transparent transition-shadow hover:shadow-md hover:ring-gray-200 focus:outline-none active:ring-gray-300 disabled:opacity-80 disabled:shadow-sm"
         >
-          {randomSearchLoading ? "Loading..." : "I am feeling lucky"}
-        </button>
+          I am feeling lucky
+        </Link>
       </div>
     </>
   );
